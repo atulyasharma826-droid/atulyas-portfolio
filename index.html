@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atulya Sharma — Creative Portfolio</title>
+    <meta name="description" content="Portfolio of Atulya Sharma — Graphic Designer, Creative Learner, and Digital Artist. Explore my journey in design, creativity, and innovation.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Three.js for 3D background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- GSAP + ScrollTrigger + ScrollSmoother -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+</head>
+<body>
+    <!-- Three.js Canvas Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-orbit">
+                <div class="preloader-planet"></div>
+            </div>
+            <div class="preloader-text">
+                <span class="preloader-name">ATULYA SHARMA</span>
+                <div class="preloader-bar">
+                    <div class="preloader-bar-fill" id="preloader-bar-fill"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-logo">
+            <span class="logo-text">A<span class="logo-accent">.</span>S</span>
+        </div>
+        <div class="nav-links">
+            <a href="#hero" class="nav-link" data-index="01">Home</a>
+            <a href="#about" class="nav-link" data-index="02">About</a>
+            <a href="#skills" class="nav-link" data-index="03">Skills</a>
+            <a href="#updates" class="nav-link" data-index="04">Updates</a>
+            <a href="#work" class="nav-link" data-index="05">Work</a>
+            <a href="#contact" class="nav-link" data-index="06">Contact</a>
+        </div>
+        <button class="nav-menu-btn" id="nav-menu-btn" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-links">
+            <a href="#hero" class="mobile-link">Home</a>
+            <a href="#about" class="mobile-link">About</a>
+            <a href="#skills" class="mobile-link">Skills</a>
+            <a href="#updates" class="mobile-link">Updates</a>
+            <a href="#work" class="mobile-link">Work</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="smooth-wrapper">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span class="badge-text">Currently Learning & Creating</span>
+                </div>
+                <h1 class="hero-title">
+                    <div class="title-line">
+                        <span class="title-word" data-speed="1.1">ATULYA</span>
+                    </div>
+                    <div class="title-line">
+                        <span class="title-word outline" data-speed="0.9">SHARMA</span>
+                    </div>
+                </h1>
+                <div class="hero-subtitle">
+                    <div class="subtitle-line">
+                        <span>Graphic Designer</span>
+                        <span class="separator">◆</span>
+                        <span>Creative Learner</span>
+                        <span class="separator">◆</span>
+                        <span>Digital Artist</span>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <a href="#work" class="cta-button" id="cta-explore">
+                        <span class="cta-text">Explore My Work</span>
+                        <span class="cta-icon">→</span>
+                    </a>
+                    <a href="#contact" class="cta-button cta-outline" id="cta-contact">
+                        <span class="cta-text">Get In Touch</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-scroll-indicator">
+                <div class="scroll-line"></div>
+                <span class="scroll-text">Scroll Down</span>
+            </div>
+            <div class="hero-floating-elements">
+                <div class="floating-shape shape-1"></div>
+                <div class="floating-shape shape-2"></div>
+                <div class="floating-shape shape-3"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section about" id="about">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-number">02</span>
+                    <h2 class="section-title">
+                        <span class="title-reveal">About Me</span>
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="about-grid">
+                    <div class="about-image-wrapper">
+                        <div class="about-image-frame">
+                            <div class="about-avatar">
+                                <div class="avatar-placeholder">
+                                    <span class="avatar-initials">AS</span>
+                                    <div class="avatar-glow"></div>
+                                </div>
+                            </div>
+                            <div class="image-frame-corner tl"></div>
+                            <div class="image-frame-corner tr"></div>
+                            <div class="image-frame-corner bl"></div>
+                            <div class="image-frame-corner br"></div>
+                        </div>
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <span class="stat-number" data-count="15">0</span>
+                                <span class="stat-label">Projects</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-count="5">0</span>
+                                <span class="stat-label">Skills</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-count="100">0</span>
+                                <span class="stat-label">% Passion</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-content">
+                        <p class="about-text large">
+                            Hey there! I'm <span class="highlight">Atulya Sharma</span> — a passionate creative on a journey of continuous learning and growth.
+                        </p>
+                        <p class="about-text">
+                            Currently diving deep into the world of <span class="highlight">Graphic Design</span>, exploring visual storytelling, typography, color theory, and digital illustration. Every day brings new discoveries and creative breakthroughs.
+                        </p>
+                        <p class="about-text">
+                            I believe in the power of design to communicate, inspire, and transform ideas into visual experiences. My journey is driven by curiosity and the desire to master the art of digital creation.
+                        </p>
+                        <div class="about-tags">
+                            <span class="tag">🎨 Design</span>
+                            <span class="tag">💡 Creativity</span>
+                            <span class="tag">📚 Learning</span>
+                            <span class="tag">🚀 Growth</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section skills" id="skills">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-number">03</span>
+                    <h2 class="section-title">
+                        <span class="title-reveal">Skills & Tools</span>
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card" data-tilt>
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="4" width="40" height="40" rx="8" stroke="currentColor" stroke-width="2"/><path d="M14 34L24 14L34 34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18 26H30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </div>
+                        <h3 class="skill-name">Adobe Illustrator</h3>
+                        <p class="skill-desc">Vector graphics, logos, and illustrations</p>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-progress="65"></div>
+                        </div>
+                        <span class="skill-level">Learning</span>
+                    </div>
+                    <div class="skill-card" data-tilt>
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="4" width="40" height="40" rx="8" stroke="currentColor" stroke-width="2"/><path d="M16 14H22C25.3 14 28 16.7 28 20C28 23.3 25.3 26 22 26H16V14Z" stroke="currentColor" stroke-width="2"/><path d="M16 26H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16 34V26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="32" cy="30" r="4" stroke="currentColor" stroke-width="2"/><path d="M36 30V16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </div>
+                        <h3 class="skill-name">Adobe Photoshop</h3>
+                        <p class="skill-desc">Photo editing, composites, and manipulation</p>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-progress="70"></div>
+                        </div>
+                        <span class="skill-level">Learning</span>
+                    </div>
+                    <div class="skill-card" data-tilt>
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2"/><path d="M24 4C24 4 16 16 16 24C16 32 24 44 24 44" stroke="currentColor" stroke-width="2"/><path d="M24 4C24 4 32 16 32 24C32 32 24 44 24 44" stroke="currentColor" stroke-width="2"/><path d="M4 24H44" stroke="currentColor" stroke-width="2"/></svg>
+                        </div>
+                        <h3 class="skill-name">UI/UX Design</h3>
+                        <p class="skill-desc">User interfaces, wireframes, and prototypes</p>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-progress="50"></div>
+                        </div>
+                        <span class="skill-level">Exploring</span>
+                    </div>
+                    <div class="skill-card" data-tilt>
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="32" rx="4" stroke="currentColor" stroke-width="2"/><path d="M8 16H40" stroke="currentColor" stroke-width="2"/><circle cx="14" cy="12" r="1.5" fill="currentColor"/><circle cx="20" cy="12" r="1.5" fill="currentColor"/><path d="M16 28L20 24L24 28L32 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3 class="skill-name">Canva & Figma</h3>
+                        <p class="skill-desc">Rapid design, presentations, and collaboration</p>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-progress="80"></div>
+                        </div>
+                        <span class="skill-level">Confident</span>
+                    </div>
+                    <div class="skill-card" data-tilt>
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 48 48" fill="none"><path d="M24 4L4 14L24 24L44 14L24 4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M4 24L24 34L44 24" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M4 34L24 44L44 34" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3 class="skill-name">Typography</h3>
+                        <p class="skill-desc">Font pairing, layout, and visual hierarchy</p>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-progress="60"></div>
+                        </div>
+                        <span class="skill-level">Growing</span>
+                    </div>
+                    <div class="skill-card" data-tilt>
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 48 48" fill="none"><circle cx="20" cy="20" r="8" stroke="currentColor" stroke-width="2"/><circle cx="32" cy="20" r="8" stroke="currentColor" stroke-width="2"/><circle cx="26" cy="30" r="8" stroke="currentColor" stroke-width="2"/></svg>
+                        </div>
+                        <h3 class="skill-name">Color Theory</h3>
+                        <p class="skill-desc">Palettes, harmony, and brand color systems</p>
+                        <div class="skill-progress">
+                            <div class="progress-bar" data-progress="55"></div>
+                        </div>
+                        <span class="skill-level">Learning</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Updates / Learning Journey Section -->
+        <section class="section updates" id="updates">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-number">04</span>
+                    <h2 class="section-title">
+                        <span class="title-reveal">Learning Journey</span>
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">
+                            <span class="dot-pulse"></span>
+                        </div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">Now — May 2026</span>
+                            <h3 class="timeline-title">🎨 Deep Diving into Graphic Design</h3>
+                            <p class="timeline-desc">Currently mastering Adobe Photoshop & Illustrator. Working on brand identity projects, social media designs, and exploring advanced composition techniques.</p>
+                            <div class="timeline-tags">
+                                <span class="t-tag">Photoshop</span>
+                                <span class="t-tag">Illustrator</span>
+                                <span class="t-tag">Brand Design</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">April 2026</span>
+                            <h3 class="timeline-title">🖌️ Typography & Layout Fundamentals</h3>
+                            <p class="timeline-desc">Studied font pairing principles, grid systems, and visual hierarchy. Created multiple poster designs to practice layout composition.</p>
+                            <div class="timeline-tags">
+                                <span class="t-tag">Typography</span>
+                                <span class="t-tag">Layout</span>
+                                <span class="t-tag">Posters</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">March 2026</span>
+                            <h3 class="timeline-title">🎯 UI/UX Exploration Begins</h3>
+                            <p class="timeline-desc">Started learning Figma for UI design. Built wireframes and prototypes for mobile app concepts. Understanding user-centered design principles.</p>
+                            <div class="timeline-tags">
+                                <span class="t-tag">Figma</span>
+                                <span class="t-tag">Wireframing</span>
+                                <span class="t-tag">Prototyping</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">February 2026</span>
+                            <h3 class="timeline-title">🌈 Color Theory & Digital Art</h3>
+                            <p class="timeline-desc">Explored color psychology, complementary palettes, and started digital illustration practice. Created a personal color system for projects.</p>
+                            <div class="timeline-tags">
+                                <span class="t-tag">Color Theory</span>
+                                <span class="t-tag">Digital Art</span>
+                                <span class="t-tag">Illustration</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">January 2026</span>
+                            <h3 class="timeline-title">🚀 The Creative Journey Begins</h3>
+                            <p class="timeline-desc">Decided to pursue graphic design seriously. Started with Canva basics, logo design concepts, and social media template creation.</p>
+                            <div class="timeline-tags">
+                                <span class="t-tag">Canva</span>
+                                <span class="t-tag">Logo Design</span>
+                                <span class="t-tag">Social Media</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work / Portfolio Section -->
+        <section class="section work" id="work">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-number">05</span>
+                    <h2 class="section-title">
+                        <span class="title-reveal">Featured Work</span>
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="work-grid">
+                    <div class="work-card" id="work-card-1">
+                        <div class="work-card-visual" style="--card-accent: #8B5CF6;">
+                            <div class="work-card-pattern">
+                                <div class="pattern-element p1"></div>
+                                <div class="pattern-element p2"></div>
+                                <div class="pattern-element p3"></div>
+                            </div>
+                            <span class="work-card-number">01</span>
+                        </div>
+                        <div class="work-card-info">
+                            <span class="work-category">Brand Identity</span>
+                            <h3 class="work-title">Modern Logo Collection</h3>
+                            <p class="work-desc">A series of minimal and modern logo designs exploring geometric shapes and negative space.</p>
+                        </div>
+                    </div>
+                    <div class="work-card" id="work-card-2">
+                        <div class="work-card-visual" style="--card-accent: #06B6D4;">
+                            <div class="work-card-pattern">
+                                <div class="pattern-element p1"></div>
+                                <div class="pattern-element p2"></div>
+                                <div class="pattern-element p3"></div>
+                            </div>
+                            <span class="work-card-number">02</span>
+                        </div>
+                        <div class="work-card-info">
+                            <span class="work-category">Social Media</span>
+                            <h3 class="work-title">Instagram Templates</h3>
+                            <p class="work-desc">Eye-catching social media templates with bold typography and vibrant color palettes.</p>
+                        </div>
+                    </div>
+                    <div class="work-card" id="work-card-3">
+                        <div class="work-card-visual" style="--card-accent: #F43F5E;">
+                            <div class="work-card-pattern">
+                                <div class="pattern-element p1"></div>
+                                <div class="pattern-element p2"></div>
+                                <div class="pattern-element p3"></div>
+                            </div>
+                            <span class="work-card-number">03</span>
+                        </div>
+                        <div class="work-card-info">
+                            <span class="work-category">Print Design</span>
+                            <h3 class="work-title">Creative Posters</h3>
+                            <p class="work-desc">Experimental poster designs combining typography, photography, and abstract elements.</p>
+                        </div>
+                    </div>
+                    <div class="work-card" id="work-card-4">
+                        <div class="work-card-visual" style="--card-accent: #10B981;">
+                            <div class="work-card-pattern">
+                                <div class="pattern-element p1"></div>
+                                <div class="pattern-element p2"></div>
+                                <div class="pattern-element p3"></div>
+                            </div>
+                            <span class="work-card-number">04</span>
+                        </div>
+                        <div class="work-card-info">
+                            <span class="work-category">UI Design</span>
+                            <h3 class="work-title">App Concept Designs</h3>
+                            <p class="work-desc">Mobile app UI concepts with clean interfaces and intuitive user experience flows.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section contact" id="contact">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-number">06</span>
+                    <h2 class="section-title">
+                        <span class="title-reveal">Let's Connect</span>
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-text">
+                        <p class="contact-intro">Have a project in mind or want to collaborate? I'd love to hear from you!</p>
+                        <div class="contact-info-list">
+                            <div class="contact-info-item">
+                                <span class="contact-icon">📧</span>
+                                <span class="contact-detail">atulya@example.com</span>
+                            </div>
+                            <div class="contact-info-item">
+                                <span class="contact-icon">📍</span>
+                                <span class="contact-detail">India</span>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="#" class="social-link" id="social-instagram" aria-label="Instagram">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+                            </a>
+                            <a href="#" class="social-link" id="social-linkedin" aria-label="LinkedIn">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                            </a>
+                            <a href="#" class="social-link" id="social-behance" aria-label="Behance">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18V6h5a3 3 0 010 6 3 3 0 010 6H3z"/><path d="M14 12h7a3.5 3.5 0 10-3.5-3.5"/><path d="M14 12h7a3.5 3.5 0 11-3.5 3.5"/><path d="M15 6h5"/></svg>
+                            </a>
+                            <a href="#" class="social-link" id="social-dribbble" aria-label="Dribbble">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 3c4 5 6 10 6 18"/><path d="M16 3c-4 5-6 10-6 18"/><path d="M2 12h20"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="form-name" class="form-input" placeholder=" " required>
+                            <label for="form-name" class="form-label">Your Name</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="form-email" class="form-input" placeholder=" " required>
+                            <label for="form-email" class="form-label">Your Email</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="form-message" class="form-input form-textarea" placeholder=" " required></textarea>
+                            <label for="form-message" class="form-label">Your Message</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <button type="submit" class="form-submit" id="form-submit">
+                            <span class="submit-text">Send Message</span>
+                            <span class="submit-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg>
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <span class="footer-logo">ATULYA SHARMA</span>
+                    <p class="footer-tagline">Creating the future, one design at a time.</p>
+                </div>
+                <div class="footer-right">
+                    <p class="footer-copy">© 2026 Atulya Sharma. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
